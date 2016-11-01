@@ -12,7 +12,10 @@ class HomeController @Inject()(messagesApi: MessagesApi) extends Controller {
 
     val texts = List(
       messageTest("test-key.lang-name"),
-      messageTest("nothing")
+      messageTest("nothing"),
+      messageTest("test-key.defined-at-only-ja"),
+      messageTest("test-key.defined-at-only-zh"),
+      messageTest("test-key.defined-at-only-en")
     ).mkString("\n\n")
     
     

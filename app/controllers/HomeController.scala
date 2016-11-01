@@ -23,8 +23,9 @@ class HomeController @Inject()(messagesApi: MessagesApi) extends Controller {
     val languageCodes = List("en", "en-us", "ja-jp", "zh-cn")
     languageCodes.map(langCode => {
       val messages = Messages(Lang(langCode), messagesApi)
+      val isDefined = messages.isDefinedAt(messageName)
       val message = messages(messageName)
-      val text = s"${messageName} [${langCode}] = ${message}"
+      val text = s"${messageName} [${langCode}] = ${message}, isDefined = ${isDefined}"
       println(text)
       text
     }).mkString("\n")
